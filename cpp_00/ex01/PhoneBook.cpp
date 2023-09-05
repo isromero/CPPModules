@@ -16,7 +16,6 @@ void PhoneBook::Add()
 {
   Contact contact;
   std::string input;
-  int indexOverflow = 0;
 
   std::cout << "First Name: ";
   if (!std::getline(std::cin, input))
@@ -50,52 +49,53 @@ void PhoneBook::Add()
 
   if (currentContactIndex < maxContacts)
   {
+    contact.setIndex(currentContactIndex);
     contacts[currentContactIndex] = contact;
     currentContactIndex++;
   }
   else
   {
-    /* Tengo que arreglar cuando ya se pasa de número el índice */
+    contact.setIndex(currentContactIndex % maxContacts);
+    contacts[currentContactIndex % maxContacts] = contact;
     currentContactIndex++;
-    if (indexOverflow == 7)
-      indexOverflow = 0;
-    contacts[indexOverflow] = contact;
-    indexOverflow++;
   }
 }
 
 void PhoneBook::PrintContacts()
 {
-  int index = 0;
   std::cout << std::setw(10) << "index" << " | "
             << std::setw(10) << "first name" << " | " 
             << std::setw(10) << "last name" << " | "
             << std::setw(10) << "last name" << " | " << std::endl;
 
-  for (int i = 0; i < currentContactIndex; i++)
+  for (int i = 0; i < maxContacts; i++)
   {
-    const auto &contact = contacts[i];
-    std::string firstName = contact.getFirstName();
-    std::string lastName = contact.getLastName();
-    std::string nickname = contact.getNickname();
+    const Contact &contact = contacts[i];
 
-    if (firstName.length() > 10)
-      firstName = firstName.substr(0, 9) + ".";
-    if (lastName.length() > 10)
-      lastName = lastName.substr(0, 9) + ".";
-    if (nickname.length() > 10)
-      nickname = nickname.substr(0, 9) + ".";
+    if (contact.getIndex() >= 0) {
+      int         index = contact.getIndex();
+      std::string firstName = contact.getFirstName();
+      std::string lastName = contact.getLastName();
+      std::string nickname = contact.getNickname();
 
-    std::cout << std::setw(10) << std::right << i << " | "
-              << std::setw(10) << std::right << firstName << " | "
-              << std::setw(10) << std::right << lastName << " | "
-              << std::setw(10) << std::right << nickname << std::endl;
+      if (firstName.length() > 10)
+        firstName = firstName.substr(0, 9) + ".";
+      if (lastName.length() > 10)
+        lastName = lastName.substr(0, 9) + ".";
+      if (nickname.length() > 10)
+        nickname = nickname.substr(0, 9) + ".";
+      
+      std::cout << std::setw(10) << std::right << index << " | "
+                << std::setw(10) << std::right << firstName << " | "
+                << std::setw(10) << std::right << lastName << " | "
+                << std::setw(10) << std::right << nickname << std::endl;
+    }
   }
 }
 
 void PhoneBook::PrintSpecificContact(int i)
 {
-  const auto &contact = contacts[i];
+  const Contact &contact = contacts[i];
 
   if (i >= 0 && i <= currentContactIndex)
   {
@@ -127,8 +127,12 @@ void PhoneBook::Search()
     std::cin.clear();
     std::cin.ignore(1000, '\n');
   }
-  else if (i >= 0 && i < currentContactIndex)
+  else if (i >= 0 && i <= currentContactIndex)
     PrintSpecificContact(i);
   else
+  {
     std::cout << "Invalid index. The contact does not exist." << std::endl;
+    std::cin.clear();
+    std::cin.ignore(1000, '\n');
+  }
 }
