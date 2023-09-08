@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
-# define CONTACT_HPP
+#define CONTACT_HPP
 
 #include <iostream>
 #include <string>
@@ -22,7 +22,7 @@ class Contact
 public:
   Contact() : index(-1), firstName(""), lastName(""), nickname(""), phoneNumber(""), darkestSecret("") {}
 
-  int         getIndex() const { return index; }
+  int getIndex() const { return index; }
   std::string getFirstName() const { return firstName; }
   std::string getLastName() const { return lastName; }
   std::string getNickname() const { return nickname; }
@@ -37,7 +37,7 @@ public:
   void setDarkestSecret(const std::string &secret) { darkestSecret = secret; }
 
 private:
-  int         index;
+  int index;
   std::string firstName;
   std::string lastName;
   std::string nickname;

@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/09/05 12:42:43 by isromero          #+#    #+#              #
-#    Updated: 2023/09/05 12:42:43 by isromero         ###   ########.fr        #
+#    Created: 2023/09/05 12:42:56 by isromero          #+#    #+#              #
+#    Updated: 2023/09/05 12:42:56 by isromero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
+NAME = account
 
 CC = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = main.cpp PhoneBook.cpp
+SRCS = Acount.cpp tests.cpp
 OBJS_DIR = obj
 OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:.cpp=.o))
 

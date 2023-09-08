@@ -12,7 +12,7 @@
 
 #include "PhoneBook.hpp"
 
-int main()
+int main(void)
 {
   PhoneBook phoneBook;
   std::string input;

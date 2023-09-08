@@ -11,27 +11,28 @@
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#define PHONEBOOK_HPP
 
 #include <iostream>
 #include <string>
 #include <iomanip>
 #include "Contact.hpp"
 
-class PhoneBook {
-  public:
-    PhoneBook() : currentContactIndex(0) {}
-    void Add();
-    void PrintContacts();
-    void PrintSpecificContact(int i);
-    void Search();
+class PhoneBook
+{
+public:
+  PhoneBook() : currentContactIndex(0) {}
+  void Add();
+  void PrintContacts();
+  void PrintSpecificContact(int i);
+  void Search();
+ 
+  int getCurrentContactIndex() const { return currentContactIndex; }
 
-    int getCurrentContactIndex() const { return currentContactIndex; }
-
-  private:
-    static const int maxContacts = 8;
-    Contact contacts[maxContacts];
-    int currentContactIndex;
+private:
+  static const int maxContacts = 8;
+  Contact contacts[maxContacts];
+  int currentContactIndex;
 };
 
 #endif
