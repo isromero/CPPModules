@@ -12,11 +12,6 @@
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string zombieName)
-{
-  this->name = zombieName;
-}
-
 Zombie::~Zombie(void)
 {
   std::cout << this->name << " is dead" << std::endl;
