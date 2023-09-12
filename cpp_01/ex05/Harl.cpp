@@ -36,8 +36,17 @@ void Harl::complain(std::string level)
 {
   t_func funcs[] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
   std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+  int found = 0;
 
-  for (int i = 0; i < 4 && levels[i].compare(level); i++)
-  if (i < 4)
-    (this->*funcs[i])();
+  for (int i = 0; i < 4; i++)
+  {
+    if (levels[i] == level)
+    {
+      (this->*funcs[i])();
+      found = 1;
+      break;
+    }
+  }
+  if (!found)
+    std::cout << "UNKNOWN COMPLAIN" << std::endl;
 }

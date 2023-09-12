@@ -16,7 +16,7 @@ int main(void)
 {
   std::string args;
   Harl harl;
-  std::cout << "Enter a [level]: <debug> <info> <warning> <error>: ";
+  std::cout << "Enter a [level]: <DEBUG> <INFO> <WARNING> <ERROR>: ";
   std::cin >> args;
   harl.complain(args);
   return 0;
