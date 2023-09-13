@@ -18,6 +18,6 @@ int main(int argc, char **argv)
   if (argc == 2)
     harl.complain(argv[1]);
   else
-    std::cout << "Usage: ./harlFilter <level>" << std::endl;
+    std::cout << "Usage: ./harlFilter [level]" << std::endl;
   return 0;
 }
