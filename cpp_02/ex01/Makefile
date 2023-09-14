@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/09/12 21:13:25 by isromero          #+#    #+#              #
-#    Updated: 2023/09/12 21:13:25 by isromero         ###   ########.fr        #
+#    Created: 2023/09/14 21:03:31 by isromero          #+#    #+#              #
+#    Updated: 2023/09/14 21:03:31 by isromero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = harlFilter
+NAME = a.out
 
 CC = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = main.cpp Harl.cpp
+SRCS = main.cpp Fixed.cpp
 OBJS_DIR = obj
 OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:.cpp=.o))
 
