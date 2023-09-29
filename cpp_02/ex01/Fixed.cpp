@@ -12,18 +12,27 @@
 
 #include "Fixed.hpp"
 
-Fixed &Fixed::operator=(const Fixed &other)
-{
-    this->value = other.value;
-    return *this;
-}
-
 int Fixed::getRawBits() const
 {
-    return this->value;
+  return this->value;
 }
 
 void Fixed::setRawBits(int raw)
 {
-    this->value = raw;
+  this->value = raw;
+}
+
+float Fixed::toFloat(void) const
+{
+  return static_cast<float>(this->getRawBits()) / (1 << fractionalBits);
+}
+
+int Fixed::toInt(void) const
+{
+  return this->value >> fractionalBits;
+}
+
+std::ostream &operator<<(std::ostream &stream, const Fixed &value)
+{
+  return stream << value.toFloat();
 }

@@ -51,7 +51,7 @@ public:
 
 private:
   int value;
-  static const int rawBits = 8;
+  static const int fractionalBits = 8;
 };
 
 #endif
