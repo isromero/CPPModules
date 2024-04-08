@@ -6,7 +6,7 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 20:25:14 by isromero          #+#    #+#             */
-/*   Updated: 2024/04/08 15:33:24 by isromero         ###   ########.fr       */
+/*   Updated: 2024/04/08 16:01:09 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,19 @@ void Contact::setContact(const std::string &firstName, const std::string &lastNa
 	this->_nickname = nickname;
 	this->_phoneNumber = phoneNumber;
 	this->_darkestSecret = darkestSecret;
+}
+
+const std::string &Contact::getFirstName() const
+{
+	return (this->_firstName);
+}
+
+const std::string &Contact::getLastName() const
+{
+	return (this->_lastName);
+}
+
+const std::string &Contact::getNickname() const
+{
+	return (this->_nickname);
 }

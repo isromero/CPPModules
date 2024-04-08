@@ -6,7 +6,7 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 20:25:16 by isromero          #+#    #+#             */
-/*   Updated: 2024/04/08 15:45:31 by isromero         ###   ########.fr       */
+/*   Updated: 2024/04/08 16:16:24 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,47 @@ void PhoneBook::addContact(void)
 
 void PhoneBook::searchContact(void) const
 {
+	if (_totalContacts > 0)
+	{
+		std::cout << std::setw(10) << "Index"
+				  << "|";
+		std::cout << std::setw(10) << "First Name"
+				  << "|";
+		std::cout << std::setw(10) << "Last Name"
+				  << "|";
+		std::cout << std::setw(10) << "Nickname" << std::endl;
+		for (int i = 0; i < _totalContacts; i++)
+		{
+			std::cout << std::setw(10) << i << "|";
+			std::cout << std::setw(10) << _contacts[i].getFirstName() << "|";
+			std::cout << std::setw(10) << _contacts[i].getLastName() << "|";
+			std::cout << std::setw(10) << _contacts[i].getNickname() << std::endl;
+		}
+
+		std::string input;
+		std::cout << "Enter the index of the contact you want to see: ";
+		std::getline(std::cin, input);
+		while (input.empty())
+		{
+			std::cout << "Index cannot be empty. Please enter the index of the contact you want to see: ";
+			std::getline(std::cin, input);
+		}
+
+		int index;
+		if (std::isdigit(input[0]))
+			index = std::stoi(input);
+		else
+			index = -1;
+
+		if (index >= 0 && index < _totalContacts)
+		{
+			std::cout << "First Name: " << _contacts[index].getFirstName() << std::endl;
+			std::cout << "Last Name: " << _contacts[index].getLastName() << std::endl;
+			std::cout << "Nickname: " << _contacts[index].getNickname() << std::endl;
+		}
+		else
+			std::cout << "Invalid index" << std::endl;
+	}
+	else
+		std::cout << "No contacts to show" << std::endl;
 }
