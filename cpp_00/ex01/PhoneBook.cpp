@@ -6,7 +6,7 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 20:25:16 by isromero          #+#    #+#             */
-/*   Updated: 2024/04/08 16:16:24 by isromero         ###   ########.fr       */
+/*   Updated: 2024/04/08 20:38:50 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ PhoneBook::PhoneBook() : _totalContacts(0) {}
 
 PhoneBook::~PhoneBook() {}
 
-void PhoneBook::addContact(void)
+void PhoneBook::addContact()
 {
 	if (_totalContacts == 8)
 		std::cout << "PhoneBook is full. The oldest contact will be replaced." << std::endl;
@@ -72,7 +72,7 @@ void PhoneBook::addContact(void)
 		_totalContacts++;
 }
 
-void PhoneBook::searchContact(void) const
+void PhoneBook::searchContact() const
 {
 	if (_totalContacts > 0)
 	{

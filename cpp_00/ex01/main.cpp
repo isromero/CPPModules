@@ -6,14 +6,14 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 20:25:08 by isromero          #+#    #+#             */
-/*   Updated: 2024/04/08 15:42:16 by isromero         ###   ########.fr       */
+/*   Updated: 2024/04/08 20:38:20 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include <iostream>
 
-int main(void)
+int main()
 {
 	PhoneBook phoneBook;
 	std::string input;
