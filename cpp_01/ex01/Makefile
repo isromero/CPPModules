@@ -6,7 +6,7 @@
 #    By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/01 20:36:31 by isromero          #+#    #+#              #
-#    Updated: 2024/04/10 21:02:35 by isromero         ###   ########.fr        #
+#    Updated: 2024/04/10 21:03:22 by isromero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ RM = rm -f
 
 OBJSDIR = objs
 
-SRCS = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+SRCS = main.cpp Zombie.cpp zombieHorde.cpp
 OBJS = $(SRCS:%.cpp=${OBJSDIR}/%.o)
 
 # Colors
