@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 18:34:30 by isromero          #+#    #+#             */
-/*   Updated: 2024/04/12 21:01:07 by isromero         ###   ########.fr       */
+/*   Created: 2024/04/11 18:34:44 by isromero          #+#    #+#             */
+/*   Updated: 2024/04/12 21:04:40 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
-#include "HumanA.hpp"
-#include "HumanB.hpp"
+#ifndef HUMANA_HPP
+#define HUMANA_HPP
 
-int main()
+#include "Weapon.hpp"
+
+class HumanA
 {
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanA bob("Bob", club);
-		bob.attack();
-		club.setType("some other type of club");
-		bob.attack();
-	}
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanB jim("Jim");
-		jim.setWeapon(club);
-		jim.attack();
-		club.setType("some other type of club");
-		jim.attack();
-	}
-	return 0;
-}
+public:
+	HumanA(std::string const &name, Weapon &weapon);
+	~HumanA();
+	void attack() const;
+
+private:
+	std::string _name;
+	// Utilizamos una referencia para que sea más eficiente y podamos
+	// tener una misma instancia de weapon compartida con la misma
+	// referencia entre muchos HumanA, evitando copias innecesarias
+	Weapon &_weapon;
+};
+
+#endif

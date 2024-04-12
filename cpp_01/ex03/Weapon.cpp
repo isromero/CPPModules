@@ -6,13 +6,13 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 18:35:28 by isromero          #+#    #+#             */
-/*   Updated: 2024/04/11 18:43:04 by isromero         ###   ########.fr       */
+/*   Updated: 2024/04/12 20:58:24 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 
-Weapon::Weapon()
+Weapon::Weapon(std::string const &type) : _type(type)
 {
 }
 
