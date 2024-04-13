@@ -1,0 +1,2 @@
+This is a sample text. s1 is a placeholder that we will replace with s2.
+We will replace s1 with s2 in this text as well.
