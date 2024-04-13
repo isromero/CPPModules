@@ -47,7 +47,8 @@
 	"array": "cpp",
 	"optional": "cpp",
 	"unordered_map": "cpp",
-	"vector": "cpp"
+	"vector": "cpp",
+	"fstream": "cpp"
 },
   "editor.tabSize": 4,
   "editor.insertSpaces": false,

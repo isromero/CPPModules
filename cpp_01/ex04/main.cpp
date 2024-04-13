@@ -6,7 +6,7 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 18:34:30 by isromero          #+#    #+#             */
-/*   Updated: 2024/04/13 13:29:53 by isromero         ###   ########.fr       */
+/*   Updated: 2024/04/13 13:37:47 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int main(int argc, char **argv)
 	if (!ifs)
 	{
 		std::cerr << "Error: Unable to open input file: " << filename << std::endl;
-		return 1;
+		return (1);
 	}
 	std::string content;
 	std::string line;
@@ -66,5 +66,5 @@ int main(int argc, char **argv)
 	ofs << finalContent;
 	std::cout << "File copied successfully." << std::endl;
 	ofs.close();
-	return 0;
+	return (0);
 }

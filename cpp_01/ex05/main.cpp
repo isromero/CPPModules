@@ -5,20 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 19:54:28 by isromero          #+#    #+#             */
-/*   Updated: 2024/04/13 13:38:15 by isromero         ###   ########.fr       */
+/*   Created: 2024/04/11 18:34:30 by isromero          #+#    #+#             */
+/*   Updated: 2024/04/13 13:38:23 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-
 int main()
 {
-	int N = 5;
-
-	Zombie *horde = zombieHorde(N, "Juan");
-	for (int i = 0; i < N; i++)
-		horde[i].announce();
-	delete[] horde;
 	return (0);
 }
