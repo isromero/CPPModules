@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 18:35:28 by isromero          #+#    #+#             */
-/*   Updated: 2024/04/13 13:43:48 by isromero         ###   ########.fr       */
+/*   Created: 2024/04/11 18:34:30 by isromero          #+#    #+#             */
+/*   Updated: 2024/04/14 20:04:27 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanB.hpp"
+#include "Harl.hpp"
 
-HumanB::HumanB(std::string const &name) : _name(name), _weapon(NULL)
-{
-}
+#include "Harl.hpp"
+#include <iostream>
 
-HumanB::~HumanB()
+int main(int argc, char **argv)
 {
-}
-
-void HumanB::attack() const
-{
-	std::cout << this->_name << " attacks with their " << this->_weapon->getType() << std::endl;
-}
-
-void HumanB::setWeapon(Weapon &weapon)
-{
-	this->_weapon = &weapon;
+	if (argc != 2)
+	{
+		std::cerr << "Error: Usage: ./harl <DEBUG|INFO|WARNING|ERROR>" << std::endl;
+		return (1);
+	}
+	Harl harl;
+	harl.complain(argv[1]);
+	return (0);
 }

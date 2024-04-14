@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 18:35:28 by isromero          #+#    #+#             */
-/*   Updated: 2024/04/13 13:43:48 by isromero         ###   ########.fr       */
+/*   Created: 2024/04/13 13:45:35 by isromero          #+#    #+#             */
+/*   Updated: 2024/04/14 20:30:45 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanB.hpp"
+#ifndef HARL_HPP
+#define HARL_HPP
 
-HumanB::HumanB(std::string const &name) : _name(name), _weapon(NULL)
-{
-}
+#include <iostream>
 
-HumanB::~HumanB()
+class Harl
 {
-}
+public:
+	Harl();
+	~Harl();
+	void complain(std::string const &level);
 
-void HumanB::attack() const
-{
-	std::cout << this->_name << " attacks with their " << this->_weapon->getType() << std::endl;
-}
+private:
+	void debug();
+	void info();
+	void warning();
+	void error();
+	// Creamos un alias llamado functionPtr que servirá para
+	// apuntar a cualquier función de Harl, y sin argumentos
+	typedef void (Harl::*functionPtr)();
+};
 
-void HumanB::setWeapon(Weapon &weapon)
-{
-	this->_weapon = &weapon;
-}
+#endif
