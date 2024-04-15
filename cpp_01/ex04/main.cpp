@@ -6,27 +6,11 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 18:34:30 by isromero          #+#    #+#             */
-/*   Updated: 2024/04/13 13:37:47 by isromero         ###   ########.fr       */
+/*   Updated: 2024/04/15 19:47:02 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <fstream>
-#include <string>
-
-std::string replaceContent(std::string &content, std::string const &s1, std::string const &s2)
-{
-	if (s1.empty())
-		return (content);
-	size_t index = content.find(s1);
-	while (index != std::string::npos)
-	{
-		content.erase(index, s1.size());
-		content.insert(index, s2);
-		index = content.find(s1);
-	}
-	return (content);
-}
+#include "Sed.hpp"
 
 int main(int argc, char **argv)
 {
@@ -62,7 +46,8 @@ int main(int argc, char **argv)
 		std::cerr << "Unable to open output file." << std::endl;
 		return 1;
 	}
-	std::string const &finalContent = replaceContent(content, s1, s2);
+	Sed sed;
+	std::string const &finalContent = sed.replaceContent(content, s1, s2);
 	ofs << finalContent;
 	std::cout << "File copied successfully." << std::endl;
 	ofs.close();
