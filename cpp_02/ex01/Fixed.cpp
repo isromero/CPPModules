@@ -6,7 +6,7 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 20:46:48 by isromero          #+#    #+#             */
-/*   Updated: 2024/04/17 21:17:29 by isromero         ###   ########.fr       */
+/*   Updated: 2024/04/22 19:56:13 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,21 @@ void Fixed::setRawBits(int const raw)
 	this->_fixedPointValue = raw;
 }
 
+float Fixed::toFloat() const
+{
+	return (static_cast<float>(this->_fixedPointValue) / (1 << this->_fractionalBits));
+}
+
+int Fixed::toInt() const
+{
+	return (this->_fixedPointValue >> this->_fractionalBits);
+}
+
 // Hacemos que cada vez que utilicemos '<<' con la clase Fixed
 // directamente ya esté transformado en float con toFloat().
 // Evitando así acceder todo el rato a esa función en cada '<<'
 std::ostream &operator<<(std::ostream &os, const Fixed &fixed)
 {
-
 	os << fixed.toFloat();
 	return (os);
 }
