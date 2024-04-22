@@ -6,7 +6,7 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 20:46:06 by isromero          #+#    #+#             */
-/*   Updated: 2024/04/22 21:02:06 by isromero         ###   ########.fr       */
+/*   Updated: 2024/04/22 21:22:41 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int main(void)
 	std::cout << j << std::endl;
 	std::cout << k << std::endl;
 
-	/* std::cout << Fixed::max(a, b) << std::endl; */
+	std::cout << Fixed::max(a, b) << std::endl;
+	std::cout << Fixed::min(a, b) << std::endl;
 	return (0);
 }

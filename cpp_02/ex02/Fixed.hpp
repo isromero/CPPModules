@@ -6,7 +6,7 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 20:45:55 by isromero          #+#    #+#             */
-/*   Updated: 2024/04/22 20:47:36 by isromero         ###   ########.fr       */
+/*   Updated: 2024/04/22 21:11:59 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@ public:
 	Fixed(int const intNum);
 	Fixed(float const floatingPointNum);
 	Fixed(const Fixed &other);
-	Fixed &operator=(const Fixed &other);
 	~Fixed();
+
+	Fixed &operator=(const Fixed &rhs);
 
 	bool operator>(const Fixed &rhs) const;
 	bool operator<(const Fixed &rhs) const;
@@ -42,6 +43,11 @@ public:
 	Fixed operator++(int);
 	Fixed &operator--();
 	Fixed operator--(int);
+
+	static Fixed &min(Fixed &lhs, Fixed &rhs);
+	static const Fixed &min(const Fixed &lhs, const Fixed &rhs);
+	static Fixed &max(Fixed &lhs, Fixed &rhs);
+	static const Fixed &max(const Fixed &lhs, const Fixed &rhs);
 
 	int getRawBits() const;
 	void setRawBits(int const raw);

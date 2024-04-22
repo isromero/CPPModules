@@ -6,7 +6,7 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 20:46:48 by isromero          #+#    #+#             */
-/*   Updated: 2024/04/22 20:57:26 by isromero         ###   ########.fr       */
+/*   Updated: 2024/04/22 21:20:27 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ Fixed::Fixed(const Fixed &other) : _fixedPointValue(other._fixedPointValue)
 {
 }
 
-Fixed &Fixed::operator=(const Fixed &other)
+Fixed &Fixed::operator=(const Fixed &rhs)
 {
-	if (this != &other)
-		_fixedPointValue = other._fixedPointValue;
+	if (this != &rhs)
+		_fixedPointValue = rhs._fixedPointValue;
 	return *this;
 }
 
@@ -124,6 +124,26 @@ Fixed Fixed::operator--(int)
 	Fixed temp = *this;
 	this->_fixedPointValue--;
 	return (temp);
+}
+
+Fixed &Fixed::min(Fixed &lhs, Fixed &rhs)
+{
+	return (lhs < rhs ? lhs : rhs);
+}
+
+const Fixed &Fixed::min(const Fixed &lhs, const Fixed &rhs)
+{
+	return (lhs < rhs ? lhs : rhs);
+}
+
+Fixed &Fixed::max(Fixed &lhs, Fixed &rhs)
+{
+	return (lhs > rhs ? lhs : rhs);
+}
+
+const Fixed &Fixed::max(const Fixed &lhs, const Fixed &rhs)
+{
+	return (lhs > rhs ? lhs : rhs);
 }
 
 int Fixed::getRawBits() const
