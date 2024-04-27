@@ -6,11 +6,13 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 09:43:05 by isromero          #+#    #+#             */
-/*   Updated: 2024/04/27 12:17:01 by isromero         ###   ########.fr       */
+/*   Updated: 2024/04/27 12:16:46 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {
@@ -31,6 +33,42 @@ int main()
 	Juan.takeDamage(4);
 	Juan.attack("MiniMiguel");
 	Juan.takeDamage(1);
+
+	ScavTrap Juanito("Juanito");
+
+	Juanito.attack("Miguel");
+	Juanito.takeDamage(3);
+	Juanito.attack("UltraMiguel");
+	Juanito.takeDamage(4);
+	Juanito.beRepaired(1);
+	Juanito.attack("MegaMiguel");
+	Juanito.attack("MiniMiguel");
+	Juanito.attack("ChiquiMiguel");
+	Juanito.attack("MiniMiguel");
+	Juanito.attack("MiniMiguel");
+	Juanito.attack("MiniMiguel");
+	Juanito.attack("UltraMiguel");
+	Juanito.takeDamage(4);
+	Juanito.attack("MiniMiguel");
+	Juanito.takeDamage(1);
+
+	FragTrap Juanote("Juanote");
+
+	Juanote.attack("Miguel");
+	Juanote.takeDamage(3);
+	Juanote.attack("UltraMiguel");
+	Juanote.takeDamage(4);
+	Juanote.beRepaired(1);
+	Juanote.attack("MegaMiguel");
+	Juanote.attack("MiniMiguel");
+	Juanote.attack("ChiquiMiguel");
+	Juanote.attack("MiniMiguel");
+	Juanote.attack("MiniMiguel");
+	Juanote.attack("MiniMiguel");
+	Juanote.attack("UltraMiguel");
+	Juanote.takeDamage(4);
+	Juanote.attack("MiniMiguel");
+	Juanote.takeDamage(1);
 
 	return (0);
 }
