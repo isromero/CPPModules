@@ -6,7 +6,7 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 11:36:32 by isromero          #+#    #+#             */
-/*   Updated: 2024/04/27 12:18:59 by isromero         ###   ########.fr       */
+/*   Updated: 2024/04/27 13:01:19 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name)
 {
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage = 20;
 	std::cout << "ScavTrap " << this->_name << " was created" << std::endl;
 }
 

@@ -6,7 +6,7 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 09:43:05 by isromero          #+#    #+#             */
-/*   Updated: 2024/04/27 12:16:55 by isromero         ###   ########.fr       */
+/*   Updated: 2024/04/27 13:04:43 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ int main()
 	Juanito.takeDamage(4);
 	Juanito.attack("MiniMiguel");
 	Juanito.takeDamage(1);
+	Juanito.guardGate();
 
 	return (0);
 }

@@ -6,13 +6,13 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 09:48:11 by isromero          #+#    #+#             */
-/*   Updated: 2024/04/27 11:44:47 by isromero         ###   ########.fr       */
+/*   Updated: 2024/04/27 12:47:28 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(const std::string &name) : _name(name), _hitPoints(100), _energyPoints(50), _attackDamage(20)
+ClapTrap::ClapTrap(const std::string &name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
 	std::cout << "ClapTrap " << this->_name << " was created" << std::endl;
 }

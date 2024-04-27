@@ -6,13 +6,14 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 09:43:05 by isromero          #+#    #+#             */
-/*   Updated: 2024/04/27 13:04:29 by isromero         ###   ########.fr       */
+/*   Updated: 2024/04/27 13:04:08 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main()
 {
@@ -71,6 +72,25 @@ int main()
 	Juanote.attack("MiniMiguel");
 	Juanote.takeDamage(1);
 	Juanote.highFivesGuys();
+
+	DiamondTrap Juanita("Juanita");
+
+	Juanita.attack("Miguel");
+	Juanita.takeDamage(3);
+	Juanita.attack("UltraMiguel");
+	Juanita.takeDamage(4);
+	Juanita.beRepaired(1);
+	Juanita.attack("MegaMiguel");
+	Juanita.attack("MiniMiguel");
+	Juanita.attack("ChiquiMiguel");
+	Juanita.attack("MiniMiguel");
+	Juanita.attack("MiniMiguel");
+	Juanita.attack("MiniMiguel");
+	Juanita.attack("UltraMiguel");
+	Juanita.takeDamage(4);
+	Juanita.attack("MiniMiguel");
+	Juanita.takeDamage(1);
+	Juanita.whoAmI();
 
 	return (0);
 }
