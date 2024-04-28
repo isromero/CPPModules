@@ -6,11 +6,11 @@
 #    By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/01 20:36:31 by isromero          #+#    #+#              #
-#    Updated: 2024/04/28 14:37:00 by isromero         ###   ########.fr        #
+#    Updated: 2024/04/28 14:46:01 by isromero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = polymorphism
+NAME = brain
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
@@ -18,7 +18,7 @@ RM = rm -f
 
 OBJSDIR = objs
 
-SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
+SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 OBJS = $(SRCS:%.cpp=${OBJSDIR}/%.o)
 
 # Colors
