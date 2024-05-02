@@ -19,7 +19,8 @@ Cat::Cat() : Animal()
 	std::cout << "A Cat was created" << std::endl;
 }
 
-Cat::Cat(const Cat &other) : Animal(other)
+// Evitamos copias superficiales creando un nuevo cerebro al copiar
+Cat::Cat(const Cat &other) : Animal(other), _brain(new Brain(*other._brain))
 {
 	std::cout << "A Cat copy was created" << std::endl;
 }
@@ -27,7 +28,13 @@ Cat::Cat(const Cat &other) : Animal(other)
 Cat &Cat::operator=(const Cat &other)
 {
 	if (this != &other)
+	{
 		Animal::operator=(other);
+		// Creamos un nuevo cerebro y eliminamos el anterior para evitar copias superficiales
+		Brain *newBrain = new Brain(*other._brain);
+		delete this->_brain;
+		this->_brain = newBrain;
+	}
 	std::cout << "Cat type: " << this->_type << " = "
 			  << "Cat type: " << other._type << std::endl;
 	return (*this);
@@ -42,4 +49,14 @@ Cat::~Cat()
 void Cat::makeSound() const
 {
 	std::cout << "Miau miau" << std::endl;
+}
+
+void Cat::changeIdea(const std::string &newIdea, int index)
+{
+	this->_brain->changeIdea(newIdea, index);
+}
+
+void Cat::printBrain() const
+{
+	this->_brain->printBrain();
 }

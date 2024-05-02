@@ -6,7 +6,7 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 12:54:59 by isromero          #+#    #+#             */
-/*   Updated: 2024/04/28 14:35:48 by isromero         ###   ########.fr       */
+/*   Updated: 2024/05/02 08:20:18 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 Brain::Brain()
 {
+	for (int i = 0; i < 100; ++i)
+		this->_ideas[i] = "Default idea";
 	std::cout << "Brain was created" << std::endl;
 }
 
@@ -40,4 +42,16 @@ Brain &Brain::operator=(const Brain &other)
 Brain::~Brain()
 {
 	std::cout << "Brain was destroyed" << std::endl;
+}
+
+void Brain::changeIdea(const std::string &newIdea, int index)
+{
+	if (index >= 0 && index < 100)
+		this->_ideas[index] = newIdea;
+}
+
+void Brain::printBrain() const
+{
+	for (int i = 0; i < 100; ++i)
+		std::cout << "Idea " << i << ": " << this->_ideas[i] << std::endl;
 }

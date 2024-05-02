@@ -6,7 +6,7 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 12:54:59 by isromero          #+#    #+#             */
-/*   Updated: 2024/04/28 14:33:33 by isromero         ###   ########.fr       */
+/*   Updated: 2024/05/02 08:17:31 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ public:
 	Brain(const Brain &other);
 	Brain &operator=(const Brain &other);
 	~Brain();
+
+	void changeIdea(const std::string &newIdea, int index);
+	void printBrain() const;
 
 private:
 	std::string _ideas[100];
