@@ -1,62 +1,62 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/02 08:42:45 by isromero          #+#    #+#             */
-/*   Updated: 2024/05/02 08:42:52 by isromero         ###   ########.fr       */
+/*   Created: 2024/04/28 12:54:59 by isromero          #+#    #+#             */
+/*   Updated: 2024/04/28 13:09:13 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Dog.hpp"
 
-Cat::Cat() : Animal()
+Dog::Dog() : AAnimal()
 {
-	this->_type = "Cat";
+	this->_type = "Dog";
 	this->_brain = new Brain();
-	std::cout << "A Cat was created" << std::endl;
+	std::cout << "A Dog was created" << std::endl;
 }
 
 // Evitamos copias superficiales creando un nuevo cerebro al copiar
-Cat::Cat(const Cat &other) : Animal(other), _brain(new Brain(*other._brain))
+Dog::Dog(const Dog &other) : AAnimal(other), _brain(new Brain(*other._brain))
 {
-	std::cout << "A Cat copy was created" << std::endl;
+	std::cout << "A Dog copy was created" << std::endl;
 }
 
-Cat &Cat::operator=(const Cat &other)
+Dog &Dog::operator=(const Dog &other)
 {
 	if (this != &other)
 	{
-		Animal::operator=(other);
+		AAnimal::operator=(other);
 		// Creamos un nuevo cerebro y eliminamos el anterior para evitar copias superficiales
 		Brain *newBrain = new Brain(*other._brain);
 		delete this->_brain;
 		this->_brain = newBrain;
 	}
-	std::cout << "Cat type: " << this->_type << " = "
-			  << "Cat type: " << other._type << std::endl;
+	std::cout << "Dog type: " << this->_type << " = "
+			  << "Dog type: " << other._type << std::endl;
 	return (*this);
 }
 
-Cat::~Cat()
+Dog::~Dog()
 {
 	delete this->_brain;
-	std::cout << "A Cat was destroyed" << std::endl;
+	std::cout << "A Dog was destroyed" << std::endl;
 }
 
-void Cat::makeSound() const
+void Dog::makeSound() const
 {
-	std::cout << "Miau miau" << std::endl;
+	std::cout << "Guau guau" << std::endl;
 }
 
-void Cat::changeIdea(const std::string &newIdea, int index)
+void Dog::changeIdea(const std::string &newIdea, int index)
 {
 	this->_brain->changeIdea(newIdea, index);
 }
 
-void Cat::printBrain() const
+void Dog::printBrain() const
 {
 	this->_brain->printBrain();
 }

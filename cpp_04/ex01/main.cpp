@@ -6,7 +6,7 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 12:54:50 by isromero          #+#    #+#             */
-/*   Updated: 2024/05/02 08:40:02 by isromero         ###   ########.fr       */
+/*   Updated: 2024/05/02 08:52:10 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 #include "Dog.hpp"
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
-
-#include <iostream>
 
 int main()
 {

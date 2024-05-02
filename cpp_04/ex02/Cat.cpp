@@ -6,13 +6,13 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 08:42:45 by isromero          #+#    #+#             */
-/*   Updated: 2024/05/02 08:42:52 by isromero         ###   ########.fr       */
+/*   Updated: 2024/05/02 09:05:28 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal()
+Cat::Cat() : AAnimal()
 {
 	this->_type = "Cat";
 	this->_brain = new Brain();
@@ -20,7 +20,7 @@ Cat::Cat() : Animal()
 }
 
 // Evitamos copias superficiales creando un nuevo cerebro al copiar
-Cat::Cat(const Cat &other) : Animal(other), _brain(new Brain(*other._brain))
+Cat::Cat(const Cat &other) : AAnimal(other), _brain(new Brain(*other._brain))
 {
 	std::cout << "A Cat copy was created" << std::endl;
 }
@@ -29,7 +29,7 @@ Cat &Cat::operator=(const Cat &other)
 {
 	if (this != &other)
 	{
-		Animal::operator=(other);
+		AAnimal::operator=(other);
 		// Creamos un nuevo cerebro y eliminamos el anterior para evitar copias superficiales
 		Brain *newBrain = new Brain(*other._brain);
 		delete this->_brain;
