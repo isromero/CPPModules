@@ -17,7 +17,7 @@ Bureaucrat::Bureaucrat() : _name("Best Bureaucrat"), _grade(1)
 	std::cout << "Bureaucrat " << this->_name << " with grade: " << this->_grade << " was created" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(int &grade, const std::string &name) : _name(name), _grade(grade)
+Bureaucrat::Bureaucrat(int grade, const std::string &name) : _name(name), _grade(grade)
 {
 	if (grade < 1)
 		throw Bureaucrat::GradeTooHighException();
@@ -63,7 +63,7 @@ int const &Bureaucrat::getGrade() const
 void Bureaucrat::incrementGrade()
 {
 	if (this->_grade == 1)
-		throw GradeTooLowException();
+		throw GradeTooHighException();
 	this->_grade--;
 }
 
@@ -86,6 +86,6 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat)
 {
-	os << bureaucrat.getName() << ", bureucrat grade " << bureaucrat.getGrade() << std::endl;
+	os << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
 	return (os);
 }
