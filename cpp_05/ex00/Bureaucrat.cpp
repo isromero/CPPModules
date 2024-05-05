@@ -34,13 +34,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat &other) : _name(other._name), _grade(oth
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 {
 	if (this != &other)
-	{
-		if (other._grade < 1)
-			throw GradeTooHighException();
-		if (other._grade > 150)
-			throw GradeTooLowException();
 		this->_grade = other._grade;
-	}
 	std::cout << "Bureaucrat " << this->_name << " = " << other._name << std::endl;
 	return (*this);
 }

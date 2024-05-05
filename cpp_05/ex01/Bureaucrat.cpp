@@ -34,13 +34,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat &other) : _name(other._name), _grade(oth
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 {
 	if (this != &other)
-	{
-		if (other._grade < 1)
-			throw GradeTooHighException();
-		if (other._grade > 150)
-			throw GradeTooLowException();
 		this->_grade = other._grade;
-	}
 	std::cout << "Bureaucrat " << this->_name << " = " << other._name << std::endl;
 	return (*this);
 }
@@ -72,6 +66,20 @@ void Bureaucrat::decrementGrade()
 	if (this->_grade == 150)
 		throw GradeTooLowException();
 	this->_grade++;
+}
+
+void Bureaucrat::signForm(Form &form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << this->getName() << " signed " << form.getName() << std::endl;
+	}
+	catch (const std::exception &e)
+	{
+		std::cerr << this->getName() << " couldn’t sign " << form.getName() << " because "
+				  << e.what() << std::endl;
+	}
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()

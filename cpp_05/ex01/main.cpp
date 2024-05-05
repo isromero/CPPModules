@@ -6,30 +6,34 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 09:43:05 by isromero          #+#    #+#             */
-/*   Updated: 2024/05/04 11:09:49 by isromero         ###   ########.fr       */
+/*   Updated: 2024/05/05 11:01:03 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main()
 {
 	try
 	{
-		Bureaucrat bureaucrat(2, "Juan El Burócrata");
+		Bureaucrat bureaucrat(1, "Juan el burócrata");
+		Form form("Papelito", false, 1, 1);
 
-		std::cout << "Info: " << bureaucrat << std::endl;
+		std::cout << bureaucrat << std::endl;
+		std::cout << form << std::endl;
 
-		std::cout << "I am " << bureaucrat.getName() << " and I have "
-				  << bureaucrat.getGrade() << " grade" << std::endl;
-		bureaucrat.incrementGrade();
-		std::cout << bureaucrat.getName() << ": Let's go baby" << std::endl;
-		std::cout << bureaucrat.getName() << ": If you increase one more I will shout an exception. I'm not that smart."
-				  << std::endl;
-		bureaucrat.incrementGrade();
+		bureaucrat.signForm(form);
+		std::cout << form.getIsSigned() << std::endl;
 
-		// Aquí no llegará nunca porque saltará el error
-		std::cout << "This is not going to happen" << std::endl;
+		Bureaucrat bureaucrat2(150, "Pepe el burócrata");
+		Form form2("Papelito2", false, 140, 140);
+
+		std::cout << bureaucrat2 << std::endl;
+		std::cout << form2 << std::endl;
+
+		bureaucrat2.signForm(form2);
+		std::cout << form2.getIsSigned() << std::endl;
 	}
 	catch (std::exception &error)
 	{
