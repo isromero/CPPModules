@@ -14,17 +14,20 @@
 
 RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", false, 72, 45), _target("default")
 {
-	std::cout << "RobotomyRequestForm " << this->getName() << " was created" << std::endl;
+	std::cout << "RobotomyRequestForm"
+			  << " was created" << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string const &target) : AForm("RobotomyRequestForm", false, 72, 45), _target(target)
 {
-	std::cout << "RobotomyRequestForm " << this->getName() << " was created" << std::endl;
+	std::cout << "RobotomyRequestForm"
+			  << " was created" << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other) : AForm(other), _target(other._target)
 {
-	std::cout << "RobotomyRequestForm " << this->getName() << " copy created" << std::endl;
+	std::cout << "RobotomyRequestForm"
+			  << " copy created" << std::endl;
 }
 
 RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &other)
@@ -34,13 +37,15 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &o
 		AForm::operator=(other);
 		this->_target = other._target;
 	}
-	std::cout << "RobotomyRequestForm " << this->getName() << " = " << other.getName() << std::endl;
+	std::cout << "RobotomyRequestForm"
+			  << " = " << other.getName() << std::endl;
 	return (*this);
 }
 
 RobotomyRequestForm::~RobotomyRequestForm()
 {
-	std::cout << "RobotomyRequestForm " << this->getName() << " was destroyed" << std::endl;
+	std::cout << "RobotomyRequestForm"
+			  << " was destroyed" << std::endl;
 }
 
 void RobotomyRequestForm::performExecution() const

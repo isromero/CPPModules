@@ -28,7 +28,7 @@ public:
 	AForm(std::string const name, bool isSigned, int const gradeRequiredToSign, int const gradeRequiredToExecute);
 	AForm(const AForm &other);
 	AForm &operator=(const AForm &other);
-	~AForm();
+	virtual ~AForm();
 
 	std::string const &getName() const;
 	bool const &getIsSigned() const;
@@ -53,6 +53,12 @@ public:
 	};
 
 	class FormNotSignedException : public std::exception
+	{
+	public:
+		const char *what() const throw();
+	};
+
+	class FormAlreadySignedException : public std::exception
 	{
 	public:
 		const char *what() const throw();
