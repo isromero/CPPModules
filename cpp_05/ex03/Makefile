@@ -6,7 +6,7 @@
 #    By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/01 20:36:31 by isromero          #+#    #+#              #
-#    Updated: 2024/05/06 21:18:06 by isromero         ###   ########.fr        #
+#    Updated: 2024/05/07 20:21:59 by isromero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ RM = rm -f
 
 OBJSDIR = objs
 
-SRCS = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+SRCS = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
 OBJS = $(SRCS:%.cpp=${OBJSDIR}/%.o)
 
 # Colors

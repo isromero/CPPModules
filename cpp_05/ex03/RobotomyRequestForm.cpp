@@ -55,3 +55,8 @@ void RobotomyRequestForm::performExecution() const
 	else
 		std::cerr << "Robotomization " << this->_target << " failed" << std::endl;
 }
+
+AForm *RobotomyRequestForm::create(const std::string &target)
+{
+	return (new RobotomyRequestForm(target));
+}

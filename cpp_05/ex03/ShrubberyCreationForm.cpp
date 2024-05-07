@@ -6,7 +6,7 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 13:07:51 by isromero          #+#    #+#             */
-/*   Updated: 2024/05/06 20:45:40 by isromero         ###   ########.fr       */
+/*   Updated: 2024/05/07 20:18:46 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,9 @@ void ShrubberyCreationForm::performExecution() const
 			"  _ -  | |   -_\n"
 			"      // \\\\";
 	file.close();
+}
+
+AForm *ShrubberyCreationForm::create(const std::string &target)
+{
+	return (new ShrubberyCreationForm(target));
 }

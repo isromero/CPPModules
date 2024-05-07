@@ -52,3 +52,8 @@ void PresidentialPardonForm::performExecution() const
 {
 	std::cout << this->_target << " has been pardoned by Zafod Beeblebrox" << std::endl;
 }
+
+AForm *PresidentialPardonForm::create(const std::string &target)
+{
+	return (new PresidentialPardonForm(target));
+}

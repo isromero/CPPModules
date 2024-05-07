@@ -6,7 +6,7 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 13:07:49 by isromero          #+#    #+#             */
-/*   Updated: 2024/05/05 14:09:07 by isromero         ###   ########.fr       */
+/*   Updated: 2024/05/07 20:18:51 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ public:
 	~ShrubberyCreationForm();
 
 	void performExecution() const;
+
+	static AForm *create(const std::string &target);
 
 private:
 	std::string _target;

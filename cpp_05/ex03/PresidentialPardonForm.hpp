@@ -32,6 +32,8 @@ public:
 
 	void performExecution() const;
 
+	static AForm *create(const std::string &target);
+
 private:
 	std::string _target;
 };
