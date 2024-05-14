@@ -6,7 +6,7 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 21:01:35 by isromero          #+#    #+#             */
-/*   Updated: 2024/05/08 21:15:54 by isromero         ###   ########.fr       */
+/*   Updated: 2024/05/14 21:15:16 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,21 @@ ScalarConverter::~ScalarConverter()
 {
 }
 
-void ScalarConverter::convert(std::string literal)
+bool ScalarConverter::isChar(std::string const &literal)
 {
-	std::cout << "char: " << std::endl;
-	std::cout << "int: " << std::endl;
-	std::cout << "float: " << std::endl;
-	std::cout << "double: " << std::endl;
+	if (literal.length() == 1 && !std::isdigit(literal[0]))
+		return (true);
+	return (false);
+}
+
+void ScalarConverter::convert(std::string const &literal)
+{
+	if (ScalarConverter::isChar(literal))
+	{
+		std::cout << "char: " << static_cast<char>(literal[0]) << std::endl;
+		std::cout << "int: " << static_cast<int>(literal[0]) << std::endl;
+		std::cout << "float: " << static_cast<float>(literal[0]) << ".0f" << std::endl;
+		std::cout << "double: " << static_cast<double>(literal[0]) << ".0" << std::endl;
+		return;
+	}
 }

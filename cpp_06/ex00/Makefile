@@ -6,11 +6,11 @@
 #    By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/01 20:36:31 by isromero          #+#    #+#              #
-#    Updated: 2024/05/08 21:09:02 by isromero         ###   ########.fr        #
+#    Updated: 2024/05/14 21:14:21 by isromero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = scalarConverter
+NAME = convert
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
