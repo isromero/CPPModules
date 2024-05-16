@@ -6,7 +6,7 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 20:59:59 by isromero          #+#    #+#             */
-/*   Updated: 2024/05/14 21:12:52 by isromero         ###   ########.fr       */
+/*   Updated: 2024/05/16 21:20:12 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ private:
 	ScalarConverter();
 
 	static bool isChar(std::string const &literal);
+	static bool isInt(std::string const &literal);
+	static bool isFloat(std::string const &literal);
+	static bool isDouble(std::string const &literal);
 };
 
 #endif
