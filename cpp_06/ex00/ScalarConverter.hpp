@@ -6,7 +6,7 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 20:59:59 by isromero          #+#    #+#             */
-/*   Updated: 2024/05/16 21:20:12 by isromero         ###   ########.fr       */
+/*   Updated: 2024/05/21 21:04:41 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 #include <iostream>
 #include <string>
+#include <cerrno>
+#include <climits>
+#include <cstdlib>
+#include <cstring>
 
 class ScalarConverter
 {
