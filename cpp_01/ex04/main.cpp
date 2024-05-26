@@ -6,7 +6,7 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 18:34:30 by isromero          #+#    #+#             */
-/*   Updated: 2024/04/15 19:47:02 by isromero         ###   ########.fr       */
+/*   Updated: 2024/05/26 16:23:29 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main(int argc, char **argv)
 	std::string const &s1 = argv[2];
 	std::string const &s2 = argv[3];
 
-	std::ifstream ifs(filename);
+	std::ifstream ifs(filename.c_str());
 	if (!ifs)
 	{
 		std::cerr << "Error: Unable to open input file: " << filename << std::endl;
@@ -40,7 +40,7 @@ int main(int argc, char **argv)
 	}
 	ifs.close();
 
-	std::ofstream ofs(filename + ".replace");
+	std::ofstream ofs((filename + ".replace").c_str());
 	if (!ofs)
 	{
 		std::cerr << "Unable to open output file." << std::endl;
