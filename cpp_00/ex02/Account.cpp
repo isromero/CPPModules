@@ -6,7 +6,7 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 20:06:22 by isromero          #+#    #+#             */
-/*   Updated: 2024/04/09 21:20:15 by isromero         ###   ########.fr       */
+/*   Updated: 2024/05/26 14:34:02 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,7 +139,7 @@ void Account::displayStatus() const
 
 void Account::_displayTimestamp(void)
 {
-	std::time_t t = std::time(nullptr);
+	std::time_t t = std::time(0);
 	std::tm *now = std::localtime(&t);
 
 	std::cout << '['

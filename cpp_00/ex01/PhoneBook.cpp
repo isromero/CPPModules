@@ -6,13 +6,13 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 20:25:16 by isromero          #+#    #+#             */
-/*   Updated: 2024/04/08 20:38:50 by isromero         ###   ########.fr       */
+/*   Updated: 2024/05/26 14:29:25 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook() : _totalContacts(0) {}
+PhoneBook::PhoneBook() : _totalContacts(0), _index(0) {}
 
 PhoneBook::~PhoneBook() {}
 
@@ -66,8 +66,9 @@ void PhoneBook::addContact()
 	Contact newContact;
 	newContact.setContact(firstName, lastName, nickname, phoneNumber, darkestSecret);
 
-	int index = _totalContacts % 8;
-	_contacts[index] = newContact;
+	_contacts[this->_index] = newContact;
+	this->_index = (this->_index + 1) % 8;
+
 	if (_totalContacts < 8)
 		_totalContacts++;
 }
@@ -102,7 +103,7 @@ void PhoneBook::searchContact() const
 
 		int index;
 		if (std::isdigit(input[0]))
-			index = std::stoi(input);
+			index = atoi(input.c_str());
 		else
 			index = -1;
 

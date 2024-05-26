@@ -6,7 +6,7 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 20:25:19 by isromero          #+#    #+#             */
-/*   Updated: 2024/04/08 20:38:55 by isromero         ###   ########.fr       */
+/*   Updated: 2024/05/26 14:23:49 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include <cstdlib>
 
 class PhoneBook
 {
@@ -29,6 +30,7 @@ public:
 private:
 	Contact _contacts[8];
 	int _totalContacts;
+	int _index;
 };
 
 #endif
