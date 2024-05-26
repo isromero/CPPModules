@@ -6,7 +6,7 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 20:06:22 by isromero          #+#    #+#             */
-/*   Updated: 2024/05/26 14:34:02 by isromero         ###   ########.fr       */
+/*   Updated: 2024/05/26 18:37:08 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ Account::Account()
 Account::~Account()
 {
 	Account::_displayTimestamp();
-	std::cout << "index;" << this->_accountIndex
+	std::cout << "index:" << this->_accountIndex
 			  << ";amount:" << this->_amount
 			  << ";closed" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 20:25:16 by isromero          #+#    #+#             */
-/*   Updated: 2024/05/26 14:29:25 by isromero         ###   ########.fr       */
+/*   Updated: 2024/05/26 18:35:48 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ void PhoneBook::addContact()
 	std::getline(std::cin, firstName);
 	while (firstName.empty())
 	{
+		if (std::cin.eof())
+			return;
 		std::cout << "First Name cannot be empty. Please enter First Name: ";
 		std::getline(std::cin, firstName);
 	}
@@ -35,6 +37,8 @@ void PhoneBook::addContact()
 	std::getline(std::cin, lastName);
 	while (lastName.empty())
 	{
+		if (std::cin.eof())
+			return;
 		std::cout << "Last Name cannot be empty. Please enter Last Name: ";
 		std::getline(std::cin, lastName);
 	}
@@ -43,6 +47,8 @@ void PhoneBook::addContact()
 	std::getline(std::cin, nickname);
 	while (nickname.empty())
 	{
+		if (std::cin.eof())
+			return;
 		std::cout << "Nickname cannot be empty. Please enter Nickname: ";
 		std::getline(std::cin, nickname);
 	}
@@ -51,6 +57,8 @@ void PhoneBook::addContact()
 	std::getline(std::cin, phoneNumber);
 	while (phoneNumber.empty())
 	{
+		if (std::cin.eof())
+			return;
 		std::cout << "Phone Number cannot be empty. Please enter Phone Number: ";
 		std::getline(std::cin, phoneNumber);
 	}
@@ -59,6 +67,8 @@ void PhoneBook::addContact()
 	std::getline(std::cin, darkestSecret);
 	while (darkestSecret.empty())
 	{
+		if (std::cin.eof())
+			return;
 		std::cout << "Darkest Secret cannot be empty. Please enter Darkest Secret: ";
 		std::getline(std::cin, darkestSecret);
 	}
@@ -71,6 +81,17 @@ void PhoneBook::addContact()
 
 	if (_totalContacts < 8)
 		_totalContacts++;
+}
+
+std::string PhoneBook::truncateString(std::string const &str) const
+{
+	std::string newStr = str;
+	if (newStr.size() > 10)
+	{
+		newStr.resize(9);
+		newStr.append(".");
+	}
+	return (newStr);
 }
 
 void PhoneBook::searchContact() const
@@ -87,9 +108,9 @@ void PhoneBook::searchContact() const
 		for (int i = 0; i < _totalContacts; i++)
 		{
 			std::cout << std::setw(10) << i << "|";
-			std::cout << std::setw(10) << _contacts[i].getFirstName() << "|";
-			std::cout << std::setw(10) << _contacts[i].getLastName() << "|";
-			std::cout << std::setw(10) << _contacts[i].getNickname() << std::endl;
+			std::cout << std::setw(10) << truncateString(_contacts[i].getFirstName()) << "|";
+			std::cout << std::setw(10) << truncateString(_contacts[i].getLastName()) << "|";
+			std::cout << std::setw(10) << truncateString(_contacts[i].getNickname()) << std::endl;
 		}
 
 		std::string input;

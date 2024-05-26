@@ -6,7 +6,7 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 20:25:19 by isromero          #+#    #+#             */
-/*   Updated: 2024/05/26 14:23:49 by isromero         ###   ########.fr       */
+/*   Updated: 2024/05/26 18:35:53 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ public:
 	~PhoneBook();
 	void addContact();
 	void searchContact() const;
+	std::string truncateString(std::string const &str) const;
 
 private:
 	Contact _contacts[8];
