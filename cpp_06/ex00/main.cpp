@@ -6,7 +6,7 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 21:05:59 by isromero          #+#    #+#             */
-/*   Updated: 2024/05/14 21:14:36 by isromero         ###   ########.fr       */
+/*   Updated: 2024/05/27 08:15:54 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,13 @@ int main(int argc, char **argv)
 		std::cout << "Usage: ./convert literal" << std::endl;
 		return (1);
 	}
-	ScalarConverter::convert(argv[1]);
+	try
+	{
+		ScalarConverter::convert(argv[1]);
+	}
+	catch (std::exception &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 	return (0);
 }
