@@ -19,11 +19,21 @@
 class Base
 {
 public:
-	virtual ~Base();
-
-	virtual std::string getName() const = 0;
+	~Base();
 
 private:
+};
+
+class A : public Base
+{
+};
+
+class B : public Base
+{
+};
+
+class C : public Base
+{
 };
 
 #endif
