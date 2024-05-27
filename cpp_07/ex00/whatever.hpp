@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Base.hpp                                :+:      :+:    :+:   */
+/*   whatever.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,30 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BASE_HPP
-#define BASE_HPP
+#ifndef WHATEVER_HPP
+#define WHATEVER_HPP
 
-#include "iostream"
-#include "string"
+#include <iostream>
 
-class Base
+template <typename T>
+void swap(T &a, T &b)
 {
-public:
-	virtual ~Base();
+	T c;
+	c = a;
+	a = b;
+	b = c;
+}
 
-private:
-};
-
-class A : public Base
+template <typename T>
+const T &min(const T &a, const T &b)
 {
-};
+	return (a < b) ? a : b;
+}
 
-class B : public Base
+template <typename T>
+const T &max(const T &a, const T &b)
 {
-};
-
-class C : public Base
-{
-};
+	return (a > b) ? a : b;
+}
 
 #endif
