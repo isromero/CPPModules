@@ -6,7 +6,7 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 21:05:59 by isromero          #+#    #+#             */
-/*   Updated: 2024/05/27 21:17:36 by isromero         ###   ########.fr       */
+/*   Updated: 2024/05/27 21:18:49 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,5 @@ int main()
 	std::cout << "c = " << c << ", d = " << d << std::endl;
 	std::cout << "min( c, d ) = " << ::min(c, d) << std::endl;
 	std::cout << "max( c, d ) = " << ::max(c, d) << std::endl;
+	return (0);
 }
