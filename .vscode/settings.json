@@ -50,7 +50,9 @@
 	"vector": "cpp",
 	"fstream": "cpp",
 	"iterator": "cpp",
-	"memory_resource": "cpp"
+	"memory_resource": "cpp",
+	"array.hpp": "c",
+	"*.tpp": "cpp"
 },
   "editor.tabSize": 4,
   "editor.insertSpaces": false,
@@ -67,4 +69,11 @@
     },
   },
   "files.insertFinalNewline": true,
+  "[tpp]": {
+	"editor.defaultFormatter": "ms-vscode.cpptools",
+	"editor.formatOnSave": true,
+	"editor.codeActionsOnSave": {
+	  "source.fixAll": "explicit"
+	},
+  },
 }
