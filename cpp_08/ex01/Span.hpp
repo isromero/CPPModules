@@ -6,7 +6,7 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 20:53:29 by isromero          #+#    #+#             */
-/*   Updated: 2024/06/18 21:07:14 by isromero         ###   ########.fr       */
+/*   Updated: 2024/06/19 21:15:01 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
-#include <limits.h>
+#include <climits>
 
 class Span
 {

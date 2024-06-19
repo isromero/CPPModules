@@ -35,7 +35,7 @@ void Span::addNumber(int n)
 	if (this->_vec.size() < this->_N)
 		_vec.push_back(n);
 	else
-		throw std::exception();
+		throw std::logic_error("Not enough space to add the number");
 }
 
 int Span::shortestSpan() const
@@ -62,7 +62,7 @@ int Span::largestSpan() const
 {
 	if (this->_vec.size() < 2)
 		throw std::logic_error("Not enough elements to calculate the span");
-	return (std::distance(std::min_element(this->_vec.begin(), this->_vec.end()), std::max_element(this->_vec.begin(), this->_vec.end())));
+	return (std::abs(*(std::max_element(this->_vec.begin(), this->_vec.end())) - *(std::min_element(this->_vec.begin(), this->_vec.end()))));
 }
 
 void Span::addRange(std::vector<int>::iterator begin, std::vector<int>::iterator end)
