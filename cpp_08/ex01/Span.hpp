@@ -6,12 +6,12 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 20:53:29 by isromero          #+#    #+#             */
-/*   Updated: 2024/06/19 21:15:01 by isromero         ###   ########.fr       */
+/*   Updated: 2024/06/20 20:45:49 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASYFIND_HPP
-#define EASYFIND_HPP
+#ifndef SPAN_HPP
+#define SPAN_HPP
 
 #include <iostream>
 #include <algorithm>
