@@ -15,22 +15,27 @@
 
 #include <iostream>
 #include <iostream>
-#include <fstream>
 #include <string>
-#include <map>
 #include <sstream>
 #include <cstdlib>
 #include <algorithm>
+#include <stack>
 
 class RPN
 {
 public:
 	RPN();
+	RPN(const std::string &expression);
 	RPN(const RPN &other);
 	RPN &operator=(const RPN &other);
 	~RPN();
 
+	void isValidRPN();
+	void executeRPN();
+
 private:
+	std::stack<int> _sk;
+	std::string _expression;
 };
 
 #endif

@@ -6,7 +6,7 @@
 #    By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/12 20:53:34 by isromero          #+#    #+#              #
-#    Updated: 2024/06/23 13:00:20 by isromero         ###   ########.fr        #
+#    Updated: 2024/07/03 20:26:09 by isromero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ RM = rm -f
 
 OBJSDIR = objs
 
-SRCS = main.cpp #RPN.cpp
+SRCS = main.cpp RPN.cpp
 OBJS = $(SRCS:%.cpp=${OBJSDIR}/%.o)
 
 # Colors
