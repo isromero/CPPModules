@@ -6,7 +6,7 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 21:08:12 by isromero          #+#    #+#             */
-/*   Updated: 2024/05/07 20:29:00 by isromero         ###   ########.fr       */
+/*   Updated: 2024/07/14 15:22:52 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,5 @@ AForm *Intern::makeForm(std::string const &formName, std::string const &target)
 	}
 
 	std::cerr << "Error: form not found" << std::endl;
-	return (nullptr);
+	return (NULL);
 }

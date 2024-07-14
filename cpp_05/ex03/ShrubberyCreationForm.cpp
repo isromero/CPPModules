@@ -6,7 +6,7 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 13:07:51 by isromero          #+#    #+#             */
-/*   Updated: 2024/05/07 20:18:46 by isromero         ###   ########.fr       */
+/*   Updated: 2024/07/14 15:21:59 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,8 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 
 void ShrubberyCreationForm::performExecution() const
 {
-	std::ofstream file(this->_target + "_shrubbery");
+	std::string filename = this->_target + "_shrubbery";
+	std::ofstream file(filename.c_str());
 	if (!file.is_open())
 	{
 		std::cerr << "Error: could not open file" << std::endl;
