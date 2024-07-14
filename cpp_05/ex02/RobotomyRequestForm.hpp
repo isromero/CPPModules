@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <string>
+#include <cstdlib>
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
