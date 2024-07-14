@@ -6,7 +6,7 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 21:05:59 by isromero          #+#    #+#             */
-/*   Updated: 2024/05/27 20:56:53 by isromero         ###   ########.fr       */
+/*   Updated: 2024/07/14 17:35:20 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void identify(Base &p) // Cuando falla un cast con referencias devuelve una exce
 		(void)a;
 		std::cout << "A" << std::endl;
 	}
-	catch (std::bad_cast &bc)
+	catch (std::exception &e)
 	{
 		try
 		{
@@ -40,7 +40,7 @@ void identify(Base &p) // Cuando falla un cast con referencias devuelve una exce
 			(void)b;
 			std::cout << "B" << std::endl;
 		}
-		catch (std::bad_cast &bc)
+		catch (std::exception &e)
 		{
 			try
 			{
@@ -48,7 +48,7 @@ void identify(Base &p) // Cuando falla un cast con referencias devuelve una exce
 				(void)c;
 				std::cout << "C" << std::endl;
 			}
-			catch (std::bad_cast &bc)
+			catch (std::exception &e)
 			{
 				std::cout << "Unknown" << std::endl;
 			}
@@ -58,7 +58,7 @@ void identify(Base &p) // Cuando falla un cast con referencias devuelve una exce
 
 Base *generate(void)
 {
-	switch (rand() % 3) // Genera un número aleatorio entre 0 y 2
+	switch (std::rand() % 3) // Genera un número aleatorio entre 0 y 2
 	{
 	case (0):
 		return (new A());
@@ -77,7 +77,7 @@ Base *generate(void)
 
 int main()
 {
-	srand(static_cast<unsigned int>(time(0))); // Inicializamos el generador de números aleatorio
+	std::srand(static_cast<unsigned int>(time(0))); // Inicializamos el generador de números aleatorio
 											   // En el caso de no hacerlo siempre que ejecutemos el programa se genera siempre la misma secuencia
 	for (int i = 0; i < 10; i++)
 	{

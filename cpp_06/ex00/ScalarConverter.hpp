@@ -6,7 +6,7 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 20:59:59 by isromero          #+#    #+#             */
-/*   Updated: 2024/05/21 21:04:41 by isromero         ###   ########.fr       */
+/*   Updated: 2024/07/14 17:23:45 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 #define SCALARCONVERTER_HPP
 
 #include <iostream>
-#include <string>
-#include <cerrno>
-#include <climits>
+#include <sstream>
+#include <cctype>
 #include <cstdlib>
-#include <cstring>
+#include <cerrno>
+#include <limits.h>
+#include <float.h>
 
 class ScalarConverter
 {
