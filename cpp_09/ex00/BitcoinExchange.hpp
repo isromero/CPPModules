@@ -14,7 +14,6 @@
 #define BITCOINEXCHANGE_HPP
 
 #include <iostream>
-#include <iostream>
 #include <fstream>
 #include <string>
 #include <map>
