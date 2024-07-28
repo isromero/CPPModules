@@ -52,9 +52,11 @@
 		"unordered_map": "cpp",
 		"variant": "cpp",
 		"vector": "cpp",
-		"algorithm": "cpp"
+		"algorithm": "cpp",
+		"charconv": "cpp",
+		"*.tpp": "cpp"
 	}
-  /* "files.associations": {
+  "files.associations": {
 	"__bit_reference": "cpp",
 	"__config": "cpp",
 	"__locale": "cpp",
@@ -141,5 +143,5 @@
 "editor.tokenColorCustomizations": {
 	"comments": "",
 	"textMateRules": []
-} */
+}
 }

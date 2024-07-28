@@ -6,7 +6,7 @@
 /*   By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 11:19:11 by isromero          #+#    #+#             */
-/*   Updated: 2024/07/28 14:03:32 by isromero         ###   ########.fr       */
+/*   Updated: 2024/07/28 16:56:46 by isromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,21 @@ int main(int argc, char **argv)
 
 		/* STD::VECTOR */
 		// Empieza a medir el tiempo
-    struct timeval beginVector, endVector;
-    gettimeofday(&beginVector, 0);
+		struct timeval beginVector, endVector;
+		gettimeofday(&beginVector, 0);
 
 		PmergeMe pmmVector;
 		std::vector<int> vector = pmmVector.parseArgs<std::vector<int> >(argc, argv);
 		std::vector<int> sortedVector = pmmVector.fordJohnsonSort<std::vector<int>, std::vector<std::pair<int, int> > >(vector);
 
 		// Para de medir el tiempo y muestra los resultados calculados
-    gettimeofday(&endVector, 0);
+		gettimeofday(&endVector, 0);
 		pmmVector.printSorts(vector, sortedVector);
 		pmmVector.printTimes(beginVector, endVector, vector.size(), "std::vector");
 
 		/* STD::DEQUE */
 		struct timeval beginDeque, endDeque;
-    gettimeofday(&beginDeque, 0);
+		gettimeofday(&beginDeque, 0);
 
 		PmergeMe pmmDeque;
 		std::deque<int> deque = pmmDeque.parseArgs<std::deque<int> >(argc, argv);

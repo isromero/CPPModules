@@ -6,7 +6,7 @@
 #    By: isromero <isromero@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/12 20:53:34 by isromero          #+#    #+#              #
-#    Updated: 2024/07/27 10:41:58 by isromero         ###   ########.fr        #
+#    Updated: 2024/07/28 16:48:54 by isromero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ RM = rm -f
 
 OBJSDIR = objs
 
-SRCS = main.cpp #PmergeMe.cpp
+SRCS = main.cpp PmergeMe.cpp
 OBJS = $(SRCS:%.cpp=${OBJSDIR}/%.o)
 
 # Colors
