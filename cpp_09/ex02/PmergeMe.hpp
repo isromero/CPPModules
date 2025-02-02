@@ -98,13 +98,21 @@ int PmergeMe::binarySearch(const Container &S, int T)
 
 /* Definición de las funciones template porque el ejercicio no indica que podamos subir archivo PmergeMe.tpp */
 
+// Función comparadora para `std::lower_bound`
+template <typename T>
+bool comparePairs(const std::pair<T, T> &a, const std::pair<T, T> &b)
+{
+	return a.second < b.second; // Ordena los pares basándose en `second`
+}
+
 // Inserción de un par de elementos en el vector de forma ordenada por el valor mayor
 template <typename PairContainer>
 void PmergeMe::insertPair(const typename PairContainer::value_type &element, PairContainer &sortedPairs)
 {
-	typename PairContainer::iterator it = std::lower_bound(sortedPairs.begin(), sortedPairs.end(), element);
+	typename PairContainer::iterator it = std::lower_bound(sortedPairs.begin(), sortedPairs.end(), element, comparePairs<typename PairContainer::value_type::first_type>);
 	sortedPairs.insert(it, element);
 }
+
 
 // Ordenación de los pares de elementos por el valor mayor
 template <typename PairContainer>

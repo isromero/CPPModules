@@ -17,7 +17,7 @@ int main(int argc, char **argv)
 	try
 	{
 		if (argc < 2)
-			throw std::invalid_argument("Usage: ./fordJohnsonSort <int1> <int2> ... <intN>");
+			throw std::invalid_argument("Usage: ./PmergeMe <int1> <int2> ... <intN>");
 
 		/* STD::VECTOR */
 		// Empieza a medir el tiempo
@@ -45,6 +45,21 @@ int main(int argc, char **argv)
 
 		gettimeofday(&endDeque, 0);
 		pmmDeque.printTimes(beginDeque, endDeque, deque.size(), "std::deque");
+
+		// Checkear que están ordenados
+		for (size_t i = 0; i < sortedDeque.size(); ++i) {
+			if (i + 1 < sortedDeque.size() && sortedDeque[i] > sortedDeque[i + 1]) {
+				throw std::runtime_error("Error: std::deque is not sorted");
+			}
+		}
+		std::cout << "std::deque is sorted" << std::endl;
+		for (size_t i = 0; i < sortedVector.size(); ++i) {
+			if (i + 1 < sortedVector.size() && sortedVector[i] > sortedVector[i + 1]) {
+				throw std::runtime_error("Error: std::vector is not sorted");
+			}
+		}
+		std::cout << "std::vector is sorted" << std::endl;
+
 	}
 	catch (const std::exception &e)
 	{

@@ -55,7 +55,7 @@ bool BitcoinExchange::_validateDate(unsigned int year, unsigned int month, unsig
 
 void BitcoinExchange::parseCsv()
 {
-	std::ifstream csv(this->_csvFilename);
+	std::ifstream csv(this->_csvFilename.c_str());
 	if (!csv.is_open())
 		throw std::runtime_error("Error opening data.csv");
 
@@ -79,7 +79,7 @@ void BitcoinExchange::parseCsv()
 
 void BitcoinExchange::parseInput()
 {
-	std::ifstream input(this->_inputFilename);
+	std::ifstream input(this->_inputFilename.c_str());
 	if (!input.is_open())
 		throw std::runtime_error("Error opening: " + this->_inputFilename);
 
